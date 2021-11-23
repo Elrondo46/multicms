@@ -1,4 +1,4 @@
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/791f93e09af4456f85605a74cbdbafe6)](https://www.codacy.com/gh/Elrondo46/apache-php/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Elrondo46/apache-php&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/4fb06965da59459892b2f3a9dc5c5d9b)](https://www.codacy.com/gh/Elrondo46/multicms/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Elrondo46/multicms&amp;utm_campaign=Badge_Grade)
 
 # MULTICMS
 
