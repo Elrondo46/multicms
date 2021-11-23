@@ -1,8 +1,6 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/791f93e09af4456f85605a74cbdbafe6)](https://www.codacy.com/gh/Elrondo46/apache-php/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Elrondo46/apache-php&amp;utm_campaign=Badge_Grade)
 
-# apache-php
-
-WARNING: PLEASE NOTE THIS PROJECT WILL BE ARCHIVED AND FILES MOVED TO MULTICMS. IL STAY ON GITHUB AND DOCKER HUB, JUST CHANGE OF REPOSITORY. IT WILL DONE IN ONE MONTH.
+# MULTICMS
 
 https://multicms.fr
 
@@ -31,7 +29,7 @@ services:
       - MYSQL_ROOT_PASSWORD=test
   
   www:
-    image: tuxnvape/apache-php-redis:latest
+    image: tuxnvape/multicms:latest
     restart: always
     volumes:
       - "www_data:/var/www/html"
