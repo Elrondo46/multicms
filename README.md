@@ -12,6 +12,7 @@ Docker Image of Apache with:
 -   Ready to use apache custom site with PHP
 
 ## Example of Docker Composer file
+
 ```yaml
 version: "3"
 
