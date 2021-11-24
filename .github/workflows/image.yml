@@ -39,7 +39,7 @@ jobs:
           push: true
           tags: |
             tuxnvape/multicms:latest
-            tuxnvape/multicms:8.0.12
+            tuxnvape/multicms:8.0.13
      
         
       - name: Build and push 74
