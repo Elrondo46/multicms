@@ -13,6 +13,7 @@ RUN set -eux; \
 		msmtp=* \
 		msmtp-mta=* \
 		wget=* \ 
+                libpq-dev=* \
 		unzip=* \
 	; \
 	rm -rf /var/lib/apt/lists/*
@@ -39,11 +40,13 @@ RUN set -ex; \
 		mysqli \
         pdo \ 
         pdo_mysql \
+        pdo_pgsql \
 		zip \
 	; \
 	pecl install imagick; \
 	pecl install redis; \
 	docker-php-ext-enable imagick; \
+        docker-php-ext-enable pdo_pgsql; \
 	docker-php-ext-enable redis; \
 	\
 # reset apt-mark's "manual" list so that "purge --auto-remove" will remove all build dependencies

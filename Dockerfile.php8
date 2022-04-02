@@ -23,6 +23,7 @@ RUN set -ex; \
 	apt-get install -y --no-install-recommends \
 		libfreetype6-dev \
 		libjpeg-dev \
+                libpq-dev \
 		libmagickwand-dev \
 		libpng-dev \
 		libzip-dev \
@@ -36,6 +37,7 @@ RUN set -ex; \
                 intl \
 		mysqli \
         pdo \ 
+        pdo_pgsql \
         pdo_mysql \
 		zip \
 	; \
@@ -43,6 +45,7 @@ RUN set -ex; \
 	pecl install redis; \
 	docker-php-ext-enable imagick; \
 	docker-php-ext-enable redis; \
+        docker-php-ext-enable pdo_pgsql; \
         docker-php-ext-enable intl; \
 	\
 # reset apt-mark's "manual" list so that "purge --auto-remove" will remove all build dependencies
