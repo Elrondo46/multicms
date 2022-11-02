@@ -28,12 +28,16 @@ RUN set -ex; \
 		libpng-dev \
 		libzip-dev \
 		brotli \
+		libtidy-dev \
+		libmemcached-dev \
 		tidy \
 	; \
 	\
 	docker-php-ext-configure gd --with-freetype --with-jpeg; \
 	docker-php-ext-install -j "$(nproc)" \
 		bcmath \
+		tidy \
+		memcached \
 		exif \
                 intl \
 		gd \
@@ -45,8 +49,6 @@ RUN set -ex; \
 	; \
 	pecl install imagick; \
 	pecl install redis; \
-	pecl install tidy; \
-	pecl install memcached; \
 	docker-php-ext-enable memcached; \
 	docker-php-ext-enable tidy; \
 	docker-php-ext-enable imagick; \
