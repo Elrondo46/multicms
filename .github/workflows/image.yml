@@ -30,6 +30,15 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
+      - name: Build and push 82
+        uses: docker/build-push-action@v3
+        with:
+          context: .                                                                                                              file: ./Dockerfile.php8
+          platforms: linux/amd64,linux/arm/v7,linux/arm64
+          push: true
+          tags: |
+            tuxnvape/multicms:8.2
+
       - name: Build and push 81  
         uses: docker/build-push-action@v3
         with:
