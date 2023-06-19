@@ -30,13 +30,14 @@ RUN set -ex; \
 		brotli \
 		libtidy-dev \
 		libmemcached-dev \
-                libzip4 \
-                libmemcached11 \
-                libmagickwand-6.q16-6 \
-                libtidy5deb1 \
 		tidy \
 	; \
 	\
+        apt-get install -y \
+                libzip4 \
+                libmemcached11 \
+                libmagickwand-6.q16-6 \
+                libtidy5deb1
 	docker-php-ext-configure gd --with-freetype --with-jpeg; \
 	docker-php-ext-install -j "$(nproc)" \
 		bcmath \
