@@ -33,13 +33,6 @@ RUN set -ex; \
 		tidy \
 	; \
 	\
-        apt-get install -y \
-                libzip4 \
-                libmemcached11 \
-                libmagickwand-6.q16-6 \
-                libtidy5deb1 \
-        ; \
-        \
 	docker-php-ext-configure gd --with-freetype --with-jpeg; \
 	docker-php-ext-install -j "$(nproc)" \
 		bcmath \
@@ -137,7 +130,7 @@ ENV SMTP_USERNAME ""
 ENV SMTP_PASSWORD ""
 
 RUN apt-get update && apt-get install -q -y msmtp msmtp-mta wget unzip && rm -rf /var/lib/apt/lists/*
-
+RUN apt-get update && apt-get install -y libzip4 libmemcached11 libmagickwand-6.q16-6 libtidy5deb1
 COPY opti-php.ini /usr/local/etc/php/conf.d/
 
 VOLUME /var/www/html
