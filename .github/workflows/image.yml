@@ -38,6 +38,7 @@ jobs:
           platforms: linux/amd64,linux/arm/v7,linux/arm64
           push: true
           tags: |
+            tuxnvape/multicms:latest
             tuxnvape/multicms:8.2
 
       - name: Build and push 81  
@@ -48,16 +49,4 @@ jobs:
           platforms: linux/amd64,linux/arm/v7,linux/arm64
           push: true
           tags: |
-            tuxnvape/multicms:latest
             tuxnvape/multicms:8.1
-
-          
-      - name: Build and push 8
-        uses: docker/build-push-action@v3
-        with:
-          context: .
-          file: ./Dockerfile.php8
-          platforms: linux/amd64,linux/arm/v7,linux/arm64
-          push: true
-          tags: |
-            tuxnvape/multicms:8.0
