@@ -31,8 +31,9 @@ RUN set -ex; \
 		libtidy-dev \
 		libmemcached-dev \
 		tidy \
-	
-RUN docker-php-ext-configure gd --with-freetype --with-jpeg; \
+	; \
+	\
+	docker-php-ext-configure gd --with-freetype --with-jpeg; \
 	docker-php-ext-install -j "$(nproc)" \
 		bcmath \
 		tidy \
