@@ -30,6 +30,7 @@ RUN set -ex; \
 		brotli \
 		libtidy-dev \
 		libmemcached-dev \
+                wget \
 		tidy \
 	; \
 	\
