@@ -48,7 +48,7 @@ RUN set -ex; \
 		zip \
 	; \
 	pecl bundle imagick; \
-        cd imagick && wget "https://raw.githubusercontent.com/Imagick/imagick/master/Imagick.stub.php" -O Imagick.stub.php && pecl build && pecl install && cd .. \
+        cd imagick && wget "https://raw.githubusercontent.com/Imagick/imagick/master/Imagick.stub.php" -O Imagick.stub.php && pecl build && make install && cd .. \
 	pecl install redis; \
 	pecl install memcached; \
 	docker-php-ext-enable memcached; \
