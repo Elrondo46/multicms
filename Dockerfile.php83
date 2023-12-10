@@ -30,7 +30,6 @@ RUN set -ex; \
 		brotli \
 		libtidy-dev \
 		libmemcached-dev \
-                wget \
 		tidy \
 	; \
 	\
@@ -47,8 +46,7 @@ RUN set -ex; \
         pdo_mysql \
 		zip \
 	; \
-	pecl bundle imagick; \
-        cd imagick && wget "https://raw.githubusercontent.com/Imagick/imagick/master/Imagick.stub.php" -O Imagick.stub.php && /root/imagick/configure --with-php-config=/usr/local/bin/php-config --with-imagick && make && make install && cd .. \
+	pecl install imagick; \
 	pecl install redis; \
 	pecl install memcached; \
 	docker-php-ext-enable memcached; \
