@@ -34,7 +34,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: ./Dockerfile.php83
+          file: ./Dockerfile.php82
           platforms: linux/amd64,linux/arm/v7,linux/arm64
           push: true
           tags: |
