@@ -54,6 +54,8 @@ RUN set -ex; \
     && make install \
     && echo "extension=imagick.so" > /usr/local/etc/php/conf.d/ext-imagick.ini \
     && rm -rf /tmp/* \
+     ; \
+       \
 	pecl install redis; \
 	pecl install memcached; \
 	docker-php-ext-enable memcached; \
