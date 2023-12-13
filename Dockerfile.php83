@@ -1,4 +1,4 @@
-FROM php:8.3.0-apache
+FROM php:8.2.13-apache
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -45,18 +45,16 @@ RUN set -ex; \
         pdo_pgsql \
         pdo_mysql \
 		zip \
-	;
-
-RUN curl -L -o /tmp/imagick.tar.gz https://github.com/Imagick/imagick/archive/7088edc353f53c4bc644573a79cdcd67a726ae16.tar.gz \
+	; \
+	curl -L -o /tmp/imagick.tar.gz https://github.com/Imagick/imagick/archive/7088edc353f53c4bc644573a79cdcd67a726ae16.tar.gz \
     && tar --strip-components=1 -xf /tmp/imagick.tar.gz \
     && phpize \
     && ./configure \
     && make \
     && make install \
     && echo "extension=imagick.so" > /usr/local/etc/php/conf.d/ext-imagick.ini \
-    && rm -rf /tmp/*
-
-RUN     pecl install redis; \
+    && rm -rf /tmp/* \
+	pecl install redis; \
 	pecl install memcached; \
 	docker-php-ext-enable memcached; \
 	docker-php-ext-enable tidy; \
