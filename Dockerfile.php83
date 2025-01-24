@@ -22,6 +22,8 @@ RUN set -ex; \
 	apt-get update; \
 	apt-get install -y --no-install-recommends \
 		libfreetype6-dev \
+                wget \
+                git \
                 libpq-dev \
 		libjpeg-dev \
 		libmagickwand-dev \
@@ -32,8 +34,8 @@ RUN set -ex; \
 		libmemcached-dev \
 		tidy \
 	; \
-	\
-	docker-php-ext-configure gd --with-freetype --with-jpeg; \
+	 
+        docker-php-ext-configure gd --with-freetype --with-jpeg; \
 	docker-php-ext-install -j "$(nproc)" \
 		bcmath \
 		tidy \
@@ -46,16 +48,15 @@ RUN set -ex; \
         pdo_mysql \
 		zip \
 	; \
-	curl -L -o /tmp/imagick.tar.gz https://github.com/Imagick/imagick/archive/7088edc353f53c4bc644573a79cdcd67a726ae16.tar.gz \
-    && tar --strip-components=1 -xf /tmp/imagick.tar.gz \
+    git clone -b fix_php84 https://github.com/mvorisek/imagick.git \
+    && cd imagick \
     && phpize \
     && ./configure \
     && make \
     && make install \
-    && echo "extension=imagick.so" > /usr/local/etc/php/conf.d/ext-imagick.ini \
+    #&& echo "extension=imagick.so" > /usr/local/etc/php/conf.d/ext-imagick.ini \
     && rm -rf /tmp/* \
      ; \
-       \
 	pecl install redis; \
 	pecl install memcached; \
 	docker-php-ext-enable memcached; \
