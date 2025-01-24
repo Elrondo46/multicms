@@ -31,9 +31,8 @@ RUN set -ex; \
 		libtidy-dev \
 		libmemcached-dev \
 		tidy \
-	#; \
-	
-RUN set -ex; \ 
+	; \
+	 
         docker-php-ext-configure gd --with-freetype --with-jpeg; \
 	docker-php-ext-install -j "$(nproc)" \
 		bcmath \
@@ -47,15 +46,15 @@ RUN set -ex; \
         pdo_mysql \
         imagick \
 		zip \
-	#; \
-	#curl -L -o /tmp/imagick.tar.gz https://github.com/Imagick/imagick/archive/7088edc353f53c4bc644573a79cdcd67a726ae16.tar.gz \
-    #&& tar --strip-components=1 -xf /tmp/imagick.tar.gz \
-    #&& phpize \
-    #&& ./configure \
-    #&& make \
-    #&& make install \
-    #&& echo "extension=imagick.so" > /usr/local/etc/php/conf.d/ext-imagick.ini \
-    #&& rm -rf /tmp/* \
+	; \
+	curl -L -o /tmp/imagick.tar.gz https://github.com/Imagick/imagick/archive/refs/tags/3.7.0.tar.gz \
+    && tar --strip-components=1 -xf /tmp/imagick.tar.gz \
+    && phpize \
+    && ./configure \
+    && make \
+    && make install \
+    && echo "extension=imagick.so" > /usr/local/etc/php/conf.d/ext-imagick.ini \
+    && rm -rf /tmp/* \
      ; \
        \
 	pecl install redis; \
