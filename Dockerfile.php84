@@ -47,8 +47,8 @@ RUN set -ex; \
         imagick \
 		zip \
 	; \
-	curl -L -o /tmp/imagick.tar.gz https://github.com/Imagick/imagick/archive/refs/tags/3.7.0.tar.gz \
-    && tar --strip-components=1 -xf /tmp/imagick.tar.gz \
+git clone -b fix_php84 "https://github.com/mvorisek/imagick" \
+    && cd imagick \
     && phpize \
     && ./configure \
     && make \
@@ -59,7 +59,6 @@ RUN set -ex; \
        \
 	pecl install redis; \
 	pecl install memcached; \
-        pecl install imagick; \
 	docker-php-ext-enable memcached; \
 	docker-php-ext-enable tidy; \
 	docker-php-ext-enable imagick; \
