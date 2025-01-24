@@ -28,7 +28,6 @@ RUN set -ex; \
 		libpng-dev \
 		libzip-dev \
 		brotli \
-                php-imagick \
 		libtidy-dev \
 		libmemcached-dev \
 		tidy \
@@ -60,6 +59,7 @@ RUN set -ex; \
        \
 	pecl install redis; \
 	pecl install memcached; \
+        pecl install imagick; \
 	docker-php-ext-enable memcached; \
 	docker-php-ext-enable tidy; \
 	docker-php-ext-enable imagick; \
