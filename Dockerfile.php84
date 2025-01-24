@@ -28,6 +28,7 @@ RUN set -ex; \
 		libpng-dev \
 		libzip-dev \
 		brotli \
+                php-imagick \
 		libtidy-dev \
 		libmemcached-dev \
 		tidy \
