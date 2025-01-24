@@ -46,18 +46,9 @@ RUN set -ex; \
         pdo_mysql \
 		zip \
 	; \
-git clone -b fix_php84 "https://github.com/mvorisek/imagick" \
-    && cd imagick \
-    && phpize \
-    && ./configure \
-    && make \
-    && make install \
-    && echo "extension=imagick.so" > /usr/local/etc/php/conf.d/ext-imagick.ini \
-    && rm -rf /tmp/* \
-     ; \
-       \
 	pecl install redis; \
 	pecl install memcached; \
+        pecl install imagick; \
 	docker-php-ext-enable memcached; \
 	docker-php-ext-enable tidy; \
 	docker-php-ext-enable imagick; \
