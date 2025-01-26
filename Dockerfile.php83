@@ -1,6 +1,6 @@
 FROM php:8.3.16-apache
 
-ENV DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update
 RUN apt-get install -y locales locales-all
@@ -128,16 +128,16 @@ RUN set -eux; \
 # (replace all instances of "%h" with "%a" in LogFormat)
 	find /etc/apache2 -type f -name '*.conf' -exec sed -ri 's/([[:space:]]*LogFormat[[:space:]]+"[^"]*)%h([^"]*")/\1%a\2/g' '{}' +
 
-ENV CMS ""
-ENV SPIP_VERSION ""
-ENV SMTP_FROM ""
-ENV SMTP_HOST ""
-ENV SMTP_PORT 25
-ENV SMTP_AUTH "off"
-ENV SMTP_TLS "off"
-ENV SMTP_STARTTLS "off"
-ENV SMTP_USERNAME ""
-ENV SMTP_PASSWORD ""
+ENV CMS=""
+ENV SPIP_VERSION=""
+ENV SMTP_FROM=""
+ENV SMTP_HOST=""
+ENV SMTP_PORT=25
+ENV SMTP_AUTH="off"
+ENV SMTP_TLS="off"
+ENV SMTP_STARTTLS="off"
+ENV SMTP_USERNAME=""
+ENV SMTP_PASSWORD=""
 
 RUN apt-get update && apt-get install -q -y msmtp msmtp-mta wget unzip && rm -rf /var/lib/apt/lists/*
 RUN apt-get update && apt-get install -y libzip4 libmemcached11 libmagickwand-6.q16-6 libtidy5deb1
