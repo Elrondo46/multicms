@@ -1,4 +1,4 @@
-#CODE OF CONFLICT (REFUSE CODE OF CONDUCT)
+# CODE OF CONFLICT (REFUSE CODE OF CONDUCT)
 
 Free software development is a very personal process compared to traditional software development methods. Your code and the ideas behind it will be carefully reviewed, often resulting in criticism. 
 This review will almost always require improvements to the code before integration. 
