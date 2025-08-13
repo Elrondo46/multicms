@@ -50,7 +50,7 @@ RUN set -ex; \
         pdo_mysql \
 		zip \
 	; \
-        curl -fsSL 'https://pecl.php.net/get/imagick-3.7.0.tgz' -o imagick.tar.gz \
+        curl -fsSL 'https://pecl.php.net/get/imagick-3.8.0.tgz' -o imagick.tar.gz \
         && mkdir -p imagick \
         && tar -xf imagick.tar.gz -C imagick --strip-components=1 \
         && rm imagick.tar.gz \
