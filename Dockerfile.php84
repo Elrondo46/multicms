@@ -1,4 +1,4 @@
-FROM php:8.4.11-apache
+FROM php:8.4.11-apache-bookworm
 
 
 ENV DEBIAN_FRONTEND=noninteractive
@@ -147,7 +147,7 @@ ENV SMTP_USERNAME=""
 ENV SMTP_PASSWORD=""
 
 RUN apt-get update && apt-get install -q -y msmtp msmtp-mta wget unzip && rm -rf /var/lib/apt/lists/*
-RUN apt-get update && apt-get install -y libzip5 libmemcached11t64 libmagickwand-7.q16-10 libtidy58
+RUN apt-get update && apt-get install -y libzip4 libmemcached11 libmagickwand-6.q16-6 libtidy5deb1
 COPY opti-php.ini /usr/local/etc/php/conf.d/
 
 VOLUME /var/www/html
