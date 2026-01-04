@@ -68,7 +68,7 @@ RUN set -ex; \
 	pecl install memcached; \
 	docker-php-ext-enable memcached; \
 	docker-php-ext-enable tidy; \
-	docker-php-ext-enable imagick; \
+	pecl install imagick; \
 	docker-php-ext-enable redis; \
         docker-php-ext-enable pdo_pgsql; \
         docker-php-ext-enable intl; \
