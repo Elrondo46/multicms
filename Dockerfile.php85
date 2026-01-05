@@ -50,25 +50,12 @@ RUN set -ex; \
         pdo_mysql \
 		zip \
 	; \
-        curl -fsSL 'https://pecl.php.net/get/imagick-3.8.0.tgz' -o imagick.tar.gz \
-        && mkdir -p imagick \
-        && tar -xf imagick.tar.gz -C imagick --strip-components=1 \
-        && rm imagick.tar.gz \
-        && ( \
-        cd imagick \
-        && phpize \
-        && ./configure \
-        && make -j "$(nproc)" \
-        && make install \
-        ) \
-        && rm -r imagick \
-        ; \
-
 	pecl install redis; \
 	pecl install memcached; \
 	docker-php-ext-enable memcached; \
 	docker-php-ext-enable tidy; \
 	pecl install imagick; \
+    docker-php-ext-enable imagick; \
 	docker-php-ext-enable redis; \
         docker-php-ext-enable pdo_pgsql; \
         docker-php-ext-enable intl; \
