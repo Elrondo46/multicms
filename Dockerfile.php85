@@ -30,6 +30,8 @@ RUN set -ex; \
 		libmagickwand-dev \
 		libpng-dev \
 		libzip-dev \
+        libicu76 \
+        libpq5 \
 		brotli \
 		libtidy-dev \
 		libmemcached-dev \
