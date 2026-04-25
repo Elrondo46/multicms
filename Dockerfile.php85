@@ -35,23 +35,14 @@ RUN set -ex; \
 		libmemcached-dev \
         libicu-dev \
 		tidy \
-          
-	; \
-
-RUN set -ex; \
-	\
-	savedAptMark="$(apt-mark showmanual)"; \
-	\
-	apt-get update; \
-	apt-get install -y \
         libicu76 \
         libpq5 \
         libpq-dev \
-		tidy \
+
           
 	; \
 	 
-        docker-php-ext-configure gd --with-freetype --with-jpeg; \
+    docker-php-ext-configure gd --with-freetype --with-jpeg; \
 	docker-php-ext-install \
 		bcmath \
 		tidy \
