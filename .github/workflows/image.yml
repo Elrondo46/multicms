@@ -41,17 +41,6 @@ jobs:
               tuxnvape/multicms:latest
               tuxnvape/multicms:8.4
 
-      - name: Build and push 83
-        uses: docker/build-push-action@v6
-        with:
-          context: .
-          file: ./Dockerfile.php83
-          platforms: linux/amd64,linux/arm/v7,linux/arm64
-          push: true
-          tags: |
-            tuxnvape/multicms:8.3
-            tuxnvape/multicms:latest
-
       - name: Build and push 85  
         uses: docker/build-push-action@v6
         with:
