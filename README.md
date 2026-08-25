@@ -12,6 +12,9 @@ Docker Image of Apache with:
 -   Selectable CMS with Wordpress, Drupal, SPIP and DotClear 
 -   Ready to use apache custom site with PHP
 
+## Thanks to contributors
+1. Quasar9000
+
 ## Example of Docker Composer file
 
 ```yaml
