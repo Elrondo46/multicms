@@ -42,7 +42,7 @@ services:
       - SMTP_FROM=toto@test.fr
       - SMTP_HOST=container_mail
       - SMTP_PORT=587
-      - CMS=wordpress #you can choose between four CMS (wordpress, drupal, SPIP or DotClear)
+      - CMS=wordpress #you can choose between four CMS (wordpress, drupal, spip or dotclear) (CMS variable must be all lowercase!!)
   
   redis:
     image: redis:latest
@@ -84,7 +84,7 @@ Tested install full sucessfull with latest version, all install mode are support
 SPIP is fully patched to use InnoDB and not the official legacy engine. It's 100% fully functionnal.
 You need to add SPIP_VERSION variable
 ```yaml
-SPIP_VERSION="4.0.0" #Current version
+SPIP_VERSION=4.4.21 #Current version (no quotes around SPIP version)
 ```
 ## WARNING
-Be carefull if you choose Drupal, change for another CMS or no CMS can danage the original container datas in case of misconfiguration.
+Be careful if you choose Drupal, change for another CMS, or no CMS, which can damage the original container datas in case of misconfiguration.
