@@ -87,4 +87,4 @@ You need to add SPIP_VERSION variable
 SPIP_VERSION=4.4.21 #Current version (no quotes around SPIP version)
 ```
 ## WARNING
-Be careful if you choose Drupal, change for another CMS, or no CMS, can damage the original container datas in case of misconfiguration.
+Be careful if you choose Drupal, change for another CMS, or no CMS, which can damage the original container datas in case of misconfiguration.
