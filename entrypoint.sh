@@ -79,8 +79,8 @@ dotclear)
   if [ -f /var/www/html/drupal/web/"$FILETEST" ] || [ -f /var/www/html/"$FILETEST" ]; then
     echo "DotClear or another CMS already installed, Install nothing"
   else
-   wget "https://download.dotclear.org/latest/dotclear-2.39.2.zip"
-   unzip dotclear-2.39.2.zip -d /var/www/html
+   wget "https://download.dotclear.org/latest/dotclear-2.39.3.zip"
+   unzip dotclear-2.39.3.zip -d /var/www/html
    mv dotclear/* .
    mv dotclear/.* .
    rm -r dotclear
